@@ -42,7 +42,6 @@
                 transition: background 0.5s ease;
                 font-size: 16px;
                 margin: 15px 30px 0;
-                width:  87%;
                 &:nth-child(2){
                     background: #53244f;
                 }
@@ -80,10 +79,9 @@
             &.erro{
                 color: red;
                 padding: 0 30px;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: bold;
             }
         }
     }
-    
 }

@@ -8,6 +8,7 @@ export class Animais {
 
 export class Usuario {
   nome:string;
+  emailesqueci:string;
   senha:string;
   email:string;
 }

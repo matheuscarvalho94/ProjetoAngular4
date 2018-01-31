@@ -50,7 +50,7 @@ export class AnimaisService {
   sendMsg(search:string) {
     this.emitSearch.emit(search);
   }
-  getAnimais(): Animais[] {
+  getAnimais(): any {
     return animais;
   }
 

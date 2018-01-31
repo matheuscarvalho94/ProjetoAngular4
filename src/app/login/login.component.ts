@@ -26,15 +26,11 @@ export class LoginComponent implements OnInit {
   ) {
     this.LoginForm = fb.group({
       'senha': ['', [Validators.required, Validators.minLength(5)]],
-      'email': ['', [this.EmailValidacao.bind(this)]],
+      'email': ['', Validators.email],
     });
   }
  
-  EmailValidacao(control: FormControl): { [s: string]: boolean } {
-    if (!(control.value.match('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'))) {
-      return { invalidEmail: true };
-    }
-  }
+  
   valid(){
     if (this.LoginForm.controls.email.invalid) {
       return "E-mail";
