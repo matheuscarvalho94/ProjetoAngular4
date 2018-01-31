@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 
-import { animaisComponent } from './animais.component';
+import { AnimaisComponent } from './animais.component';
 import { AnimaisService } from '../shared/services/animais.service';
 
 
@@ -12,8 +12,8 @@ import { AnimaisService } from '../shared/services/animais.service';
         CommonModule,
         RouterModule
     ],
-    exports: [animaisComponent],
-    declarations: [animaisComponent],
+    exports: [AnimaisComponent],
+    declarations: [AnimaisComponent],
     providers: [AnimaisService],
 })
 export class AnimaisModule { }

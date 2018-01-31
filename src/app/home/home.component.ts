@@ -9,10 +9,9 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  Usuario:Array<{email:string}> = JSON.parse(localStorage.getItem('Dados'));
-  email:string;
+  Usuario: Array<{ email: string }> = JSON.parse(localStorage.getItem('Dados'));
+  email: string;
   ngOnInit() {
-    
   }
 
 }

@@ -7,26 +7,25 @@ import { AnimaisService } from './shared/services/animais.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   title = 'ProjetoZup';
 
   mostrarMenu: boolean;
-  searchText
+  searchText;
   constructor(
     private authService: AuthService,
-    private AnimaisService: AnimaisService) { }
-  
+    private _animservices: AnimaisService) { }
+
   ngOnInit() {
     this.authService.showMenu.subscribe(
       mostrar => this.mostrarMenu = mostrar
     );
-    this.AnimaisService.emitSearch.subscribe(
+    this._animservices.emitSearch.subscribe(
       search => this.searchText = search
     );
   }
-
-  doLogout(){
+  doLogout() {
     this.authService.usuarioLogout();
   }
 

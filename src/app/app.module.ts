@@ -8,13 +8,13 @@ import { HeaderComponent } from './header/header.component';
 import { BackgroundGradientDirective } from './shared/background-gradient.directive';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { animaisComponent } from './animais/animais.component';
+import { AnimaisComponent } from './animais/animais.component';
 import { AnimaisModule } from './animais/animais.module';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guards/auth-guard';
 import { AnimaisService } from './shared/services/animais.service';
 import { FilterPipe } from './shared/filter.pipe';
-import { FormsModule, ReactiveFormsModule,FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,7 @@ import { FormsModule, ReactiveFormsModule,FormBuilder } from '@angular/forms';
     BackgroundGradientDirective,
     HomeComponent,
     LoginComponent,
-    animaisComponent,
+    AnimaisComponent,
     FilterPipe
   ],
   imports: [

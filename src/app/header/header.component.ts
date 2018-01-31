@@ -11,20 +11,18 @@ import { FilterPipe } from '../shared/filter.pipe';
 export class HeaderComponent implements OnInit {
 
   @Output()
-  searchText
+  searchText;
 
-  Usuario:Array<{email:string}> = JSON.parse(localStorage.getItem('Dados'));
-  email:string;
-  constructor(private AnimaisService: AnimaisService) {
-    this.Usuario
+  Usuario: Array<{email: string}> = JSON.parse(localStorage.getItem('Dados'));
+  email: string;
+  constructor(private _animservices: AnimaisService) {
    }
 
    onSelect(search): void {
-    this.AnimaisService.sendMsg(search);
+    this._animservices.sendMsg(search);
   }
-  
+
   ngOnInit() {
-   
   }
 
 }

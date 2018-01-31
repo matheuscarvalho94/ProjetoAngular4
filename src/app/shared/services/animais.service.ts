@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Animais } from '../../../models';
 
-let animais = [
+const animais = [
   {
     id: 1,
     titulo: 'Leão',
@@ -45,9 +45,8 @@ let animais = [
 export class AnimaisService {
 
   emitSearch = new EventEmitter<string>();
-  constructor() { 
-  }
-  sendMsg(search:string) {
+  constructor() {}
+  sendMsg(search: string) {
     this.emitSearch.emit(search);
   }
   getAnimais(): any {

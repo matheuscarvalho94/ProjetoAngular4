@@ -3,12 +3,12 @@ import { Directive, ElementRef, Renderer, HostBinding, Input, OnInit } from '@an
 @Directive({
   selector: '[BackgroundGradient]'
 })
-export class BackgroundGradientDirective implements OnInit{
+export class BackgroundGradientDirective implements OnInit {
 
   @HostBinding('style.background-image') backgroundGradient: string;
 
-  @Input('BackgroundGradient') Color: string = "#3c0c39, #53244f";
-  
+  @Input('BackgroundGradient') Color = '#3c0c39, #53244f';
+
   constructor() {}
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class BackgroundGradientDirective implements OnInit{
 
   getSetColor() {
 
-    this.backgroundGradient = 'linear-gradient(to bottom, ' + this.Color +')';
+    this.backgroundGradient = 'linear-gradient(to bottom, ' + this.Color + ')';
 
   }
 

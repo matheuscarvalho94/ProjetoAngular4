@@ -4,11 +4,11 @@ export class Animais {
   titulo: string;
   author: string;
   capa: string;
-}  
+}
 
 export class Usuario {
-  nome:string;
-  emailesqueci:string;
-  senha:string;
-  email:string;
+  nome: string;
+  emailesqueci: string;
+  senha: string;
+  email: string;
 }

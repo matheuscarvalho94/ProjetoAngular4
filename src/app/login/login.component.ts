@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
 import { Usuario } from '../../models';
-import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,14 +11,14 @@ import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 })
 
 export class LoginComponent implements OnInit {
-  Mensagemhide:boolean
+  Mensagemhide;
   LoginForm: FormGroup;
-  usuario: Usuario = new Usuario()
-  BoxEsqueci:boolean = false
-  BoxLogin: boolean = true
-  erroMsg: boolean = false
-  MensagemError:string
-  msgdesc:string
+  usuario: Usuario = new Usuario();
+  BoxEsqueci = false;
+  BoxLogin = true;
+  erroMsg = false;
+  MensagemError: string;
+  msgdesc: string;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -29,16 +29,14 @@ export class LoginComponent implements OnInit {
       'email': ['', Validators.email],
     });
   }
- 
-  
-  valid(){
+
+  valid() {
     if (this.LoginForm.controls.email.invalid) {
-      return "E-mail";
-    }else 
-    if (this.LoginForm.controls.senha.invalid) {
-      return "Senha"
+      return 'E-mail';
+    } else if (this.LoginForm.controls.senha.invalid) {
+      return 'Senha';
     }
-    return true
+    return true;
   }
   ngOnInit() {
     this.authService.erroMsg.subscribe(
@@ -50,26 +48,23 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin(form) {
-    let mensagem = this.valid()
-    if(mensagem==true){
-      console.log(form)
+    const mensagem = this.valid();
+    if ( mensagem === true ) {
       this.authService.loginUser(this.usuario);
-    }else{
-    //  alert("alt") 
-     this.Mensagemhide=true
-     this.msgdesc= "É necessário informar seus dados."
+    } else {
+     this.Mensagemhide = true;
+     this.msgdesc = 'É necessário informar seus dados.';
     }
   }
 
-  ChangeBox(){
-    console.log('Button esqueci senha')
-    this.BoxLogin=false
-    this.BoxEsqueci=true;
+  ChangeBox () {
+    this.BoxLogin = false;
+    this.BoxEsqueci = true;
   }
 
-  esqueciSenha(){
-    this.BoxEsqueci=false;
-    this.BoxLogin=true;
-    alert('Em instantes você receberá um e-mail.')
+  esqueciSenha() {
+    this.BoxEsqueci = false;
+    this.BoxLogin = true;
+    alert('Em instantes você receberá um e-mail.');
   }
 }

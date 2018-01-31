@@ -9,24 +9,24 @@ import { AnimaisService } from '../shared/services/animais.service';
   templateUrl: './animais.component.html',
   styleUrls: ['./animais.component.scss'],
 })
-export class animaisComponent implements OnInit {
+export class AnimaisComponent implements OnInit {
 
-  animais:Animais[] = [];
+  animais: Animais[] = [];
 
-  searchText:string
+  searchText: string;
 
-  @Input('titulo') 
+  @Input('titulo')
   titulo: string;
 
-  constructor(private AnimaisService: AnimaisService) {}
+  constructor(private _animservices: AnimaisService) {}
 
   getAnimais() {
-    this.animais = this.AnimaisService.getAnimais();
+    this.animais = this._animservices.getAnimais();
   }
 
   ngOnInit() {
     this.getAnimais();
-    this.AnimaisService.emitSearch.subscribe(
+    this._animservices.emitSearch.subscribe(
       search => this.searchText = search
     );
   }
