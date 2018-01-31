@@ -1,0 +1,36 @@
+<form class="container-login" [formGroup]="LoginForm" (ngSubmit)="doLogin()" >
+    <div class="box" *ngIf="BoxLogin">
+        <header class="header-block">
+          <h1 class="title">Faça seu login.</h1>
+        </header>
+        <label for="email" class="label">E-mail
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input id="email" type="email" [(ngModel)]="usuario.email" name="email" formControlName="email" >
+        </label>
+        <label for="senha" class="label">Senha
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input id="senha" type="password" [(ngModel)]="usuario.senha" name="senha" formControlName="senha">
+        </label>
+        
+        
+        <p class="erro" *ngIf="Mensagemhide">{{msgdesc}}</p>
+       
+        <div class="Buttons">
+          <button class="button" type="submit">Login</button>
+          <button class="button" (click)="ChangeBox()">Esqueci minha senha</button>
+        </div>
+      </div>
+
+      <div class="box" *ngIf="BoxEsqueci">
+          <header class="header-block">
+            <h1 class="title">Digite seu e-mail abaixo.</h1>
+          </header>
+          <label for="email" class="label">E-mail
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input id="email" type="email" [(ngModel)]="usuario.email" name="email">
+          </label>
+          <div class="Buttons">
+            <button class="button" (click)="esqueciSenha()">Enviar</button>
+          </div>
+        </div>
+</form>

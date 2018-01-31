@@ -1,0 +1,112 @@
+.side {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    padding: 25px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    height: 100px;
+    color: white;   
+    .title {
+        font-size: 0.9em;
+        max-width: 75%;
+        font-weight: 500;
+        line-height: 1.4em;
+        text-transform: uppercase;
+        margin: 5px 0;
+    }
+    .form-search {
+        display: flex;
+        margin: 0% 0;
+        padding: 1% 0;
+        align-items: flex-start;
+        box-sizing: border-box;
+        position: relative;
+        width: 20%;
+        float: right;
+        input {
+            border: 0;
+            border-bottom: 1px solid white;
+            width: 100%;
+            background: transparent;
+            height: 35px;
+            font-style: italic;
+            color: white;
+            font-size: 0.8em;
+            padding: 0 35px 0 5px;
+            &::placeholder {
+                color: white;
+            }
+        }
+        button {
+            background: transparent;
+            color: white;
+            border: 0;
+            width: 35px;
+            position: absolute;
+            right: 0;
+            top: 5px;
+            height: 35px;
+            cursor: pointer;
+        }
+    }
+    .links {
+        margin: 10px 0 25px;
+        > a {
+            display: block;
+            font-weight: bold;
+            padding: 5px 0;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.4s ease;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+    .header-user {
+        display: flex;
+        float: left;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 8px 0;
+        box-sizing: border-box;
+        left: 0;
+        > img {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+@media (max-width: 760px){
+    .side {
+        height: inherit!important;
+        &:after{
+            clear: both;
+            display: block;
+            content: '';
+        }
+        .form-search {
+            display: flex;
+            margin: 0% 0;
+            padding: 1% 0;
+            width: 100%;
+        }
+        .header-user {
+            float: none;
+        }   
+    }
+}

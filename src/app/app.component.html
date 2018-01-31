@@ -1,0 +1,5 @@
+<main class="container-main" [BackgroundGradient]="'#3c0c39, #53244f'" [ngClass]="{'full': mostrarMenu}">
+    <app-header *ngIf="mostrarMenu"></app-header>
+    <router-outlet></router-outlet>
+    <button class="fa fa-power-off" *ngIf="mostrarMenu" (click)="doLogout()"></button>
+</main>

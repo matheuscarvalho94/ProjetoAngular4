@@ -1,0 +1,15 @@
+<h2 class="title" [hidden]="!titulo">{{titulo}}</h2>
+<ul class="list">   
+
+  <li *ngFor="let animal of animais | filter: searchText">
+      <div class="figure" >
+        <img src="../assets/{{animal.capa}}" alt="{{animal.titulo}}">
+      </div>
+      <h3 class="name">{{animal.titulo}}</h3>
+      <p class="dono">Dono: {{animal.dono}}</p>
+  </li>
+
+  <p class="NenhumEncontrado" *ngIf="(animais | filter: searchText).length==0">
+    Nenhum animal encontrado.
+  </p>
+</ul>

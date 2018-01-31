@@ -1,0 +1,10 @@
+<aside class="side">
+  <header class="header-user">
+    <img src="http://via.placeholder.com/120x120">
+    <span>{{Usuario.email}}</span>
+</header>
+  <form class="form-search">
+    <input type="text" placeholder="Buscar" [(ngModel)]="searchText" (change)="onSelect(searchText)" name="searchText">
+    <button class="fa fa-search"></button>
+  </form>
+</aside>
